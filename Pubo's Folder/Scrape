@@ -1,0 +1,62 @@
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+    "Accept-Language": "en-US,en;q=0.9"
+}
+url = 'https://cuetracker.net/tournaments/world-open/2025/6445'
+response = requests.get(url, headers=headers)
+soup = BeautifulSoup(response.text, 'html.parser')
+print(response)
+
+#The following scrapes all matches using the keyword "match" since they are split into "match row odd" and "match row even"
+
+matches_df = pd.DataFrame(columns = ['Player1', 'Player2', 'Score1','Score2','Best Of', 'Round Name', 'Tournament Name'])
+all_matches = soup.find_all("div", class_ = "match")
+tournament_name = soup.find("h1", class_ = "text-center")
+tournament_name_str = [tournament_name.text.strip()]
+count = 0
+for match in all_matches:
+
+
+    match_data = []
+    #players names are under this class name, I took a portion of the class name because it is common for both players
+    players_names = match.find_all("div", class_ = "matchResultText")
+
+    for player_name in players_names:
+        # turn the string into a list, so .extend works properly, o.w. it extends character-by-character
+        player = [player_name.text.strip()]
+        match_data.extend(player)
+
+    #same thing here, the actual scores are under 'span'
+    players_scores = match.find_all("span", class_ = "matchResultText")
+
+    for scores in players_scores:
+        score = [scores.text.strip()]
+        match_data.extend(score)
+
+     #The parentheses () is interpreted as negative sign, so just get rid of "()"
+    best_of = [match.find("span", class_ = "best_of").text.strip("()")]
+    match_data.extend(best_of)
+
+    round_name = [match.find("h5").text.strip()]
+    match_data.extend(round_name)
+
+    
+    # I don't quite know how to handle non-played matches as they don't have a "Played On" date
+    # match_date = match.find("div", class_ = "col-12 played_on")
+    # if match_date is None:
+    #     match_date_str = []
+    # else:
+    #     match_date_str = [match_date.text.strip()]
+
+    # match_data.extend(match_date_str)
+    match_data.extend(tournament_name_str)
+
+    matches_df.loc[count] = match_data
+    count+=1
+    
+matches_df.to_csv(f'/Users/huangpubo/Documents/Erdos/EloRatingProject/{tournament_name_str[0]}-all-matches.csv')
+    
