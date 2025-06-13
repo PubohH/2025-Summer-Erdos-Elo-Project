@@ -20,8 +20,8 @@ predict: input an array of pairs of players
 Let R1 and R2 denote the elo-rating for player1 and player2. Then the expected winrate of player1 is $E1 = \frac{1}{1 + e^{(R2-R1)/400}}$.  
 Suppose player1 and player2 play a match and the scores are score1 and score2. Then their actual frame win rate is $S1 = \frac{score1}{score1+score2}$ and $S2 = \frac{score2}{score1+score2}$.  
 After this match, the elo-rating for player1 will be updated: 
-$R1_new = R1 + K * best_of  * (1-E1) + 0.1 * K * (score1+score2) * (S1-E1)$,  
-where K is the K-factor which we sets to 6. Notice that our update rule consider both match result and frame scores, but emphasize more on the former.
+$R1_{new} = R1 + K * n * (1-E1) + 0.1 * K * (score1+score2) * (S1-E1)$,  
+where K is the K-factor which we sets to 6, n denotes best_of. Notice that our update rule consider both match result and frame scores, but emphasize more on the former.
 
 
 
