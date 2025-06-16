@@ -12,6 +12,10 @@ In [version4](/2_Elo_Rating_System/elo_v4), we refined the update rule from v3 a
 We added a method generate_stats, which takes in historical matches and return the players statistics together with the match information. We will use it to generate dataset for modeling.  
 
 We also tested different K-factors and chose K=8 as the K-factor for our elo rating system. The testing process is in [elo_v4_test.ipynb](/2_Elo_Rating_System/elo_v4/elo_v4_test.ipynb).
+  
+We also explore the relations between players' elo rating and their match win rate. In particular, for those who have played more than 100 matches, the elo rating is positively correlated to their match win rate and frame win rate. There seems to be a linear relation between them. For more details, see the [notebook](/2_Elo_Rating_System/elo_v4/elo_v4_explore.ipynb).
+
+***
 
 # Information about elo_v4
 ## Attributes
@@ -31,3 +35,26 @@ Suppose player1 and player2 play a match and the scores are score1 and score2. T
 After this match, the elo-rating for player1 will be updated: 
 $R1_{new} = R1 + K * (\text{score1}+\text{score2}) * (S1-E1)$,  
 where K is the K-factor which we sets to 8, n denotes best_of. Notice that our update rule consider both match result and frame scores, but emphasize more on the former.
+
+## Tests of K-factors and results
+In [elo_v4_test.ipynb](/2_Elo_Rating_System/elo_v4/elo_v4_test.ipynb), we use elo rating system version 4 with 5 different K-factors to predict match results of 4 tournaments. The following two arrays are the K-factors and the index of tournmament we tested:  
+Ks = [4, 6, 8, 15, 20].  
+nth = nth = [750, 999, 1040, 1080].  
+
+The average prediction accuracy score on match result:  
+K=4:     0.698769   
+K=6:     0.708306   
+K=8:     0.705024  
+K=15:    0.711233  
+K=20:    0.700445  
+
+The average mse of prediction on player1's frames win percentage:  
+K=4:     0.044480   
+K=6:     0.043825  
+K=8:     0.043568  
+K=15:    0.043630  
+K=20:   0.043921  
+
+They have very close test results. Finally, we decided to have K=8 as the K-factor of our elo rating system.  
+
+Notice: From elo_v3, we know larger K-factors (e.g. K=30) still product goot ranking and prediction on match result but do poorly on predicting frames win rate. Also, each test needs to loop through around 100k matches and takes around 1 min. Therefore, we only test the above values for K-factors. 

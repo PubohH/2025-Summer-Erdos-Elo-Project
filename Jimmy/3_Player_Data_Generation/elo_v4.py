@@ -6,7 +6,7 @@ import math
 class elo_rating:
     def __init__(self):
         self.players = None
-        self.ratings = None
+        self.ratings = None #['elo_rating', 'matches_played', 'matches_won', 'matches_win_rate','frames_played', 'frame_won', 'frames_win_rate']
         self.stats = None
         self.stats_by_years = None
 
@@ -174,9 +174,10 @@ class elo_rating:
     def generate_stats(self, df):
         """Generate statistics of players for future matches
             Args:
-               df : pandas dataframe with columns ['player1', 'player2', 'best_of']
+               df : pandas dataframe with columns ['player1', 'player2', 'best_of', 'score1', 'score2']
             Returns:
-                stats : dataframe with columns: ['player1', 'player2', 'best_of','elo_match_win_rate', elo_frame_win_rate',
+                stats : dataframe with columns: ['player1', 'player2', 'best_of', 'player1_elo', 'player2_elo',
+                                                'elo_match_win_rate', elo_frame_win_rate',
                                                 'p1_matches_played', 'p1_matches_won', 'p1_frames_played', 'p1_frames_won', 
                                                 'p2_matches_played', 'p2_matches_won', 'p2_frames_played', 'p2_frames_won', 
                                                 'p1_frames_played_1_year', 'p1_frames_won_1_year', 'p1_frames_played_3_years', 'p1_frames_won_3_years',
@@ -195,8 +196,9 @@ class elo_rating:
 
         df = df.reset_index(drop=True)
         df2 = pd.DataFrame(0, index = df.index,
-                           columns = ['p1_matches_played', 'p1_matches_won', 'p1_frames_played', 'p1_frames_won', 
-                                      'p2_matches_played', 'p2_matches_won', 'p2_frames_played', 'p2_frames_won', 
+                           columns = ['player1_elo', 'player2_elo',
+                                    'p1_matches_played', 'p1_matches_won', 'p1_frames_played', 'p1_frames_won', 
+                                    'p2_matches_played', 'p2_matches_won', 'p2_frames_played', 'p2_frames_won', 
                                     'p1_frames_played_1_year', 'p1_frames_won_1_year', 'p1_frames_played_3_years', 'p1_frames_won_3_years',
                                     'p2_frames_played_1_year','p2_frames_won_1_year', 'p2_frames_played_3_years','p2_frames_won_3_years'])
 
@@ -207,6 +209,9 @@ class elo_rating:
             data = []
             match = df.iloc[i]
             player1, player2, best_of = match['player1'], match['player2'], match['best_of']
+
+            data.append(stats.loc[player1, 'elo_rating'])
+            data.append(stats.loc[player2, 'elo_rating'])
             
             data.extend(stats.loc[player1, ['matches_played', 'matches_won', 'frames_played', 'frames_won']])
             data.extend(stats.loc[player2, ['matches_played', 'matches_won', 'frames_played', 'frames_won']])

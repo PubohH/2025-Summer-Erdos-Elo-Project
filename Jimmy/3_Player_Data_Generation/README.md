@@ -9,6 +9,7 @@ We folder contains the code we wrote to generate matches dataset using the gener
 ## Columns of the datasets
 Player names: ['player1', 'player2'].  
 Match information: ['best_of'].  
+Players' elo_rating: ['player1_elo', 'player2_elo'].  
 Players' win rate predicted by elo: ['elo_match_win_rate', 'elo_frame_win_rate'].  
 Players' statistics (before they attend the corresponding tournament):  
 ['p1_matches_played', 'p1_matches_won','p1_frames_played', 'p1_frames_won',  
