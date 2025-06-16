@@ -16,7 +16,7 @@ Players' statistics (before they attend the corresponding tournament):
 'p2_matches_played', 'p2_matches_won', 'p2_frames_played', 'p2_frames_won',  
 'p1_frames_played_1_year', 'p1_frames_won_1_year', 'p1_frames_played_3_years', 'p1_frames_won_3_years',  
 'p2_frames_played_1_year', 'p2_frames_won_1_year', 'p2_frames_played_3_years', 'p2_frames_won_3_years'].   
-Match results: ['match_result', 'win_percentage']. 
+Match results: ['score1', 'score2', 'match_result', 'win_percentage']. 
 
 Notice: 
 1. in the match_result column, 0 means player1 wins while 1 means player2 wins.
