@@ -1,0 +1,7 @@
+# Data Exploration
+This folder contains a notebook that we explore the dataset generated from matches in the last 50 tournaments together with players' stats at the moment they enter the corresponding tournment. The data can be found in the folder [3_Player_Data_Generation](/3_Player_Data_Generation). We summarize our discovery below.
+
+1. We plot the rolling average of prediction result (accuracy) over 1000 and 2000 matches. 
+we see that the performance of prediction by our elo rating system drops significantly on the last 1000-2000 matches. We suspect that there are lots of matches that are not at the highest level are recorded and the players are not as experienced as the top players and don't have much professional matches record. Since the elo rating and their stats are not well established, their matches are harder to predict comparing to professional level players. For example, Pubo pointed out that Q school is a series of tournaments among amateurs happening in the early seaon every year which serves as qualification school for world snooker tour. These tournaments are among amateur players but still marked as professional level by our data source cuetracker.net.  
+
+However, after we drop the 
