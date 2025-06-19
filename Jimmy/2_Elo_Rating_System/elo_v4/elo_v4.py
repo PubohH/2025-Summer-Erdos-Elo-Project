@@ -5,9 +5,20 @@ import math
 
 class elo_rating:
     def __init__(self):
-        self.players = None
-        self.ratings = None
+        #Numpy array of players
+        self.players = None 
+
+        #pandas series of players rating
+        self.ratings = None 
+
+        #df with columns['elo_rating', 'matches_played', 'matches_won', 
+        # 'matches_win_rate','frames_played', 'frame_won', 'frames_win_rate']
         self.stats = None
+
+        #df with columns ['matches_played_3_years', 'matches_won_3_years',
+        #   'matches_played_1_year', 'matches_won_1_year', 
+        #   'frames_played_3_years', 'frames_won_3_years',
+        #   'frames_played_1_year', 'frames_won_1_year']
         self.stats_by_years = None
 
 
