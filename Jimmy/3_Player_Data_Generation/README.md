@@ -1,9 +1,9 @@
 # Data Generation
-We folder contains the code we wrote to generate matches dataset using the generate_stats method from [elo rating system v4](/2_Elo_Rating_System/elo_v4/elo_v4.py) and [match data](/1_Match_Data/matches.csv) from 1982 to 2025. The data generation process can be found in [data_generation.ipynb](/3_Player_Data_Generation/data_generation.ipynb).
+We folder contains the code we wrote to generate matches dataset using the generate_stats method from [elo rating system v4](/2_Elo_Rating_System/elo_v4/elo_v4.py) and [match data](/1_Match_Data/matches.csv) from 1982 to 2025. The data contains the matches information for the last 50 tournaments together players's stats such as elo ratings, matches played, etc. The data generation process can be found in [data_generation.ipynb](/3_Player_Data_Generation/data_generation.ipynb).
 
 ## Final datasets 
 1. [match_data_50_tourns.csv](/3_Player_Data_Generation/match_data_50_tourns.csv): match information together with players' statistics in the last 50 tournaments. (Sep. 2023 - Jun. 2025)
-2. [match_data_50_tourns_modified.csv](/3_Player_Data_Generation/match_data_50_tourns_modified.csv): match information together with players' statistics obtain by swapping player1 and player2 for half of the matches from previous dataset. 
+2. [match_data_50_tourns_modified.csv](/3_Player_Data_Generation/match_data_50_tourns_modified.csv): match information together with players' statistics obtain by swapping player1 and player2 for half of the matches from previous dataset. (Since in the previous data, player1 is always the winner.)
 
 ## Columns of the datasets
 Player names: ['player1', 'player2'].  

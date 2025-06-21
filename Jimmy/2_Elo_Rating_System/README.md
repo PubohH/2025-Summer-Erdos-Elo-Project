@@ -41,7 +41,7 @@ where K is the K-factor which we sets to 8, n denotes best_of.
 ## Tests of K-factors and results
 In [elo_v4_test.ipynb](/2_Elo_Rating_System/elo_v4/elo_v4_test.ipynb), we use elo rating system version 4 with 5 different K-factors to predict match results of 4 tournaments. The following two arrays are the K-factors and the index of tournmament we tested:  
 Ks = [4, 6, 8, 15, 20].  
-nth = nth = [750, 999, 1040, 1080].  
+nth = [750, 999, 1040, 1080].  
 
 The average prediction accuracy score on match result:  
 K=4:     0.698769   
@@ -59,4 +59,6 @@ K=20:   0.043921
 
 They have very close test results. Finally, we decided to have K=8 as the K-factor of our elo rating system.  
 
-Notice: From elo_v3, we know larger K-factors (e.g. K=30) still produce good ranking and prediction on match result but do poorly on predicting frames win rate. Also, each test needs to loop through around 100k matches and takes around 1 min. Therefore, we only test the above values for K-factors. 
+Notice: 
+1. From elo_v3, we know larger K-factors (e.g. K=30) still produce good ranking and prediction on match result but do poorly on predicting frames win rate. Also, each test needs to loop through around 100k matches and takes around 1 min. Therefore, we only test the above values for K-factors. 
+2. A player named Zhao Xintong has been banned from 2023 to 2024 for match fixing but won 2025 World Snooker Championship after he returned. His elo rating difference before and after this tournament can reach 300 or even more depending on the K-factor. For large K-factor, he will be the rank one in our elo ranking and has elo rating at least 200 higher than all other top players, which makes it a bad ranking because we don't expect this much change of elo rating after only one tournament. Therefore, we have paid lots of attention to his ranking when tuning the K-factor.
