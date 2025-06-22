@@ -9,8 +9,8 @@ The [ranking data](https://www.kaggle.com/datasets/sjenkins97/world-snooker-rank
 We predicted the match results for the 750th, 800th, 999th and 1080th tournament, each happened in 2013, 2014, 2022 and 2025. We run each prediction five times. The average accuracy scores are around 0.570, 0.595, 0.609 and 0.5866. The prediction for the 1080th tournament is inconsistent for the reason that rankings information after 2019 is missing and random number generator is used in this model. For more details, see [baseline1.ipynb](/Baseline/baseline1/baseline1.ipynb).
 
 ## Baseline 2
-we build a baseline model to predict the frames win percentage by player1. In particular, the model predict the player with higher elo rating to be the winner. Then it calculates the average frame win percentage p on the traininig set. It predicts the expected winner to have frame win percentage p and loser to have 1-p.  
+We build a baseline model to predict the frames win percentage by player1. In particular, the model predict the player with higher elo rating to be the winner. Then it calculates the average frame win percentage p on the traininig set. It predicts the expected winner sto have frame win percentage p and losers to have 1-p.  
 
-The dataset we use is [match_data_20_tourns_modified.csv](/3_Player_Data_Generation/match_data_20_tourns_modified.csv). It has the matches data of the last 20 professional snooker tournaments.
+The dataset we use is [match_data_50_tourns_modified.csv](/3_Player_Data_Generation/match_data_50_tourns_modified.csv). It has the matches data of the last 20 professional snooker tournaments.
 
-The rmse is 0.334.
+The rmse is 0.309.
