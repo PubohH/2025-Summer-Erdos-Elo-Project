@@ -36,7 +36,7 @@ Let R1 and R2 denote the elo-rating for player1 and player2. Then the expected w
 Suppose player1 and player2 play a match and the scores are score1 and score2. Then their actual frame win rate is $S1 = \frac{\text{score1}}{\text{score1}+\text{score2}}$ and $S2 = \frac{\text{score2}}{\text{score1}+\text{score2}}$.  
 After this match, the elo-rating for player1 will be updated: 
 $R1_{new} = R1 + K * (\text{score1}+\text{score2}) * (S1-E1)$,  
-where K is the K-factor which we sets to 8, n denotes best_of.
+where K is the K-factor which we sets to 8.
 
 ## Tests of K-factors and results
 In [elo_v4_test.ipynb](/2_Elo_Rating_System/elo_v4/elo_v4_test.ipynb), we use elo rating system version 4 with 5 different K-factors to predict match results of 4 tournaments. The following two arrays are the K-factors and the index of tournmament we tested:  
