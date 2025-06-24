@@ -14,4 +14,4 @@ We build a baseline model to predict the frames win percentage by player1. In pa
 
 The dataset we use is [match_data_300_tourns_modified.csv](/3_Player_Data_Generation/match_data_300_tourns_modified.csv). It has the matches data of the last 20 professional snooker tournaments.
 
-The rmse is 0.309.
+We use mean absolute error as a performance metric. The mae is 0.2481.
