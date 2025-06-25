@@ -15,8 +15,9 @@ The dataset, consisting of matches from the last 300 tournaments, included 34,52
 ## Test Performance
 Model performances were compared using mean absolute error (MAE) on the test set.
 
-![Performance Plot1](Assets/MAE_feature_set1.png)
-![Performance Plot2](Assets/MAE_feature_set2.png)
-![Performance Plot3](Assets/MAE_feature_set3.png)
+<div style="display: flex; gap: 10px;">
+  <img src="Assets/MAE_without_elo.png" alt="Performance Plot1" width="47%">
+  <img src="Assets/MAE_with_elo.png" alt="Performance Plot2" width="47%">
+</div>
 
 
