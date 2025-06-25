@@ -20,4 +20,13 @@ Model performances were compared using mean absolute error (MAE) on the test set
   <img src="Assets/MAE_with_elo.png" alt="Performance Plot2" width="47%">
 </div>
 
+## Error Analysis
+
+<div style="display: flex; gap: 25px;">
+  <img src="Assets/elo_hist.png" alt="Hist 1" width="35%">
+  <img src="Assets/proportion_hist.png" alt="Hist 2" width="35%">
+</div>
+
+The prediction errors are relatively high. Elo predictions tend to be normally distributed around 0.5, yet it is not uncommon for actual frame win rates to be close to 0\% or 100\% on days when one player significantly outperforms the other. This is a common issue in sports prediction: despite players having similar skill levels, one may dominate on a given day, and our current models fail to capture this behavior.
+
 
