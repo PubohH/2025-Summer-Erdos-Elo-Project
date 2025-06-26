@@ -38,7 +38,7 @@ Since the above data only contains the match result, we need to generate feature
 <img src="4_Player_Data_Exploration/Assets/matches_played_after.png" alt="after" height = 40% width=40%>
 </p>.  
 
-3. Among all the features, the elo predicted win has the highest correlation with win_percentage (the proportion of frames player1 win). This suggests that Elo ratings is a strong feature in the prediction.
+3. Among all the features, the elo predicted win has the highest correlation with win_percentage (the proportion of frames player1 win). This suggests that Elo ratings and Elo predicted win rates are strong features in predicting match scores.
 
 ## Predicting Frame Win Proportion
 
