@@ -4,7 +4,7 @@
 
 ## Project Overview 
 We applied a variation of Elo rating system for professional snooker players which assigns a number to
-each player that reflects their skill levels. We then created several machine learning models that predict
+each player that reflects their skill levels. We then trained several machine learning models that predict
 the machine result and scores based on players’ Elo ratings and their statistics.
 
 
