@@ -3,7 +3,7 @@ Note that this is different from the next folder, in which specific scores of ea
 player1 wins or lose.
 
 ## Features and Train-Test Split
-We trained the models using the data containing matches in the most recent 300 tournaments [match_data_300_tourns_modified.csv](../3_Player_Data_Generation/match_data_300_tourns_modified.csv). The most recent 20% of the matches are 
+We trained the models using the data containing matches from the last 300 tournaments [match_data_300_tourns_modified.csv](../3_Player_Data_Generation/match_data_300_tourns_modified.csv). The most recent 20% of the matches are 
 used as test set, and the rest are trained and cross-validated on 1. all features and 2. all features except Elo.
 
 ## Accuracy Comparisons between different models.
