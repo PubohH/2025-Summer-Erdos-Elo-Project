@@ -60,3 +60,10 @@ Elo predictions tend to be normally distributed around 0.5, yet it is not uncomm
 ## Predicting Match Result
 
 Using the same data set (i.e., last 300 tournaments) and the most recent 20% as testing set, we also ran different models to see how well they predict match outcome (either player1 wins or player1 loses). Since this is a classification problem, the metric we used is simply accuracy, the ratio of correct predictions among all predictions.
+<div style="display: flex; gap: 25px;">
+<img src="6_Match_Prediciton_Models/assets/comparison with Elo.png" alt="comparison 1" width="40%"/>
+<img src="6_Match_Prediciton_Models/assets/comparison without elo.png" alt="comparison 1" width="40%"/>
+</div>
+
+We see that Elo alone is already good, achieving 67.2% accuracy in predicting match outcome, and with Elo rating feature included, all other models had, on average, a 2.0% accuracy boost. However, for particular tournaments, it can happen that match prediction based on Elo is far below 50%, worse than just randomly guessing. Sometimes this is due to many players not having enough data in the system, and sometimes this is just how sports are.
+
