@@ -64,6 +64,7 @@ Using the same data set (i.e., last 300 tournaments) and the most recent 20% as 
 <img src="6_Match_Prediciton_Models/assets/comparison with Elo.png" alt="comparison 1" width="40%"/>
 <img src="6_Match_Prediciton_Models/assets/comparison without elo.png" alt="comparison 1" width="40%"/>
 </div>
+The baseline model we used is simply by offcial world rankings. For example, to predict match outcome in 2015, we use official world rankings from 2014, and the higher ranked player is always predicted to win. If both players don't have a ranking, then we simply toss a coin to decide the winner. As you can see the accuracy is just over 50%.
 
 We see that Elo alone is already good, achieving 67.2% accuracy in predicting match outcome, and with Elo rating feature included, all other models had, on average, a 2.0% accuracy boost. However, for particular tournaments, it can happen that match prediction based on Elo is far below 50%, worse than just randomly guessing. Sometimes this is due to many players not having enough data in the system, and sometimes this is just how sports are.
 
