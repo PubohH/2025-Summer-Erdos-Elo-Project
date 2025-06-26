@@ -16,3 +16,5 @@ The models we used are: Elo rating system, Logistic Regression, Random Forest, X
 </div>
 
 We see that Elo already achieves 67.2% accuracy in predicting match outcomes. This accuracy is comparable to other models that use elo and many more other features. Thus Elo rating is a good feature in predicting match outcomes. In addition, with Elo rating feature included, all other models had, on average, a 2.0% accuracy boost.
+
+Another thing to note here is that the Elo system, by definition, uses logistic function to calculate the frame winrate. In other words, the relationship between Elo difference (R2-R1) against the frame winrate of player1 is exactly logistic. We can also see that the accuracy of logistic regression is only slightly higher than the Elo model.
