@@ -1,4 +1,4 @@
-# Elo Rating and match prediction on professional snooker players
+# Elo Rating and Match Prediction on Professional Snooker
 
 ## Group Membters: Pubo Huang, Tianxiang (Jimmy) Liu, Rubaiyat Bin Islam  
 
