@@ -4,4 +4,6 @@ player1 wins or lose.
 
 ##Features and Train-Test Split
 
-we use the data from 1_Match_Data/matches.csv
+[View the data file](1_Match_Data/matches.csv)
+
+we use the data from 
