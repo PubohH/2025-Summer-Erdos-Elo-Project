@@ -4,7 +4,7 @@ player1 wins or lose.
 
 ## Features and Train-Test Split
 We trained the models using the match data [matches.csv](../1_Match_Data/matches.csv) . The most recent 20% of the matches are 
-used as test set, and the rest are trained and cross-validated on 1. all features 2. all features except Elo.
+used as test set, and the rest are trained and cross-validated on 1. all features and 2. all features except Elo.
 
 ## Accuracy Comparisons between different models.
 
