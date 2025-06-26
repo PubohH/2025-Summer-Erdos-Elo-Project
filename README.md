@@ -1,6 +1,6 @@
 # Elo Rating and Match Prediction on Professional Snooker
 
-## Group Membters: Pubo Huang, Tianxiang (Jimmy) Liu, Rubaiyat Bin Islam  
+## Group Members: Pubo Huang, Tianxiang (Jimmy) Liu, Rubaiyat Bin Islam  
 
 ## Project Overview 
 We applied a variation of Elo rating system for professional snooker players which assigns a number to
