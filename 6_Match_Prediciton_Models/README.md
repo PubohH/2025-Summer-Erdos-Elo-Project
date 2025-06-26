@@ -2,3 +2,6 @@ This Folder contains different models that are trained to predict the match outc
 Note that this is different from the next folder, in which specific scores of each match is predicted. Here we simply predict whether
 player1 wins or lose.
 
+##Features and Train-Test Split
+
+we use the data from 1_Match_Data/matches.csv
