@@ -11,6 +11,6 @@ used as test set, and the rest are trained and cross-validated on 1. all feature
 The models we used are: Elo rating system, Logistic Regression, Random Forest, XGBoost, Linear Discriminant Analysis, and Support Vector Classification. The metric we used is accuracy, it is simply the ratio of number of correct predictions to the number of all predictions.
 
 <div style="display: flex; gap: 25px;">
-<img src="6_Match_Prediciton_Models/assets/comparison with Elo.png" alt="comparison 1" width="40%"/>
-<img src="6_Match_Prediciton_Models/assets/comparison without elo.png" alt="comparison 1" width="40%"/>
+<img src="../6_Match_Prediciton_Models/assets/comparison with Elo.png" alt="comparison 1" width="40%"/>
+<img src="../6_Match_Prediciton_Models/assets/comparison without elo.png" alt="comparison 1" width="40%"/>
 </div>
