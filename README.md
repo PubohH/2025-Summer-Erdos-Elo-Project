@@ -36,4 +36,21 @@ Through out the 34k+ matches, we plotted the rolling average of prediction accur
 <p float="left">
 <img src="4_Player_Data_Exploration/Assets/matches_played_before.png" alt="before" height =40% width=40%>
 <img src="4_Player_Data_Exploration/Assets/matches_played_after.png" alt="after" height = 40% width=40%>
-</p>.  
+</p>. 
+
+## Predicting Frame Win Proportion
+
+The dataset, consisting of matches from the last 300 tournaments, included 34,521 matches ordered chronologically from earliest to most recent. The most recent 20% of matches were set aside for testing the models. Model hyperparameters where applicable were tuned while training via Grid Search with cross-validation. Performances were compared using mean absolute error (MAE) on the test set.
+
+<div style="display: flex; gap: 10px;">
+  <img src="7_Frame_Prediction_Models/Assets/MAE_without_elo.png" alt="Performance Plot1" width="47%">
+  <img src="7_Frame_Prediction_Models/Assets/MAE_with_elo.png" alt="Performance Plot2" width="47%">
+</div>
+
+The prediction errors are relatively high. We examined the following distributions to better understand the underlying reason.
+<div style="display: flex; gap: 25px;">
+  <img src="7_Frame_Prediction_Models/Assets/elo_hist.png" alt="Hist 1" width="30%">
+  <img src="7_Frame_Prediction_Models/Assets/proportion_hist.png" alt="Hist 2" width="30%">
+</div>
+
+Elo predictions tend to be normally distributed around 0.5, yet it is not uncommon for actual frame win rates to be close to 0\% or 100\% on days when one player significantly outperforms the other. This is a common issue in sports prediction: despite players having similar skill levels, one may dominate on a given day, and our current models fail to capture this behavior.
