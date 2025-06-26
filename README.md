@@ -11,7 +11,7 @@ the machine result and scores based on players’ Elo ratings and their statisti
 ## Elo Rating System  
 The Elo Rating System assigns each player a number that represents the skill levels in a zero-sum game. We built a elo rating system for professional snooker players so that the difference of two players ratings predicts the win rate of one player in one frame. If we let R1 and R2 denote the Elo rating for player1 and player2, then the expected win rate of player1 is $E1 = \frac{1}{1 + e^{(R2-R1)/400}}$.  
 
-We update players' elo ratings after each match. The update rule is the following:  
+Unlike chess, a snooker match usually contains more than 3 frames (from best of 5 to best of 35). Instead of updating players' elo ratings after each frame, we assume that the player's skill level is the same throughout the match and update players' elo ratings after each match. The update rule is the following:  
 Suppose player1 and player2 play a match and the scores are score1 and score2. Then their actual frame win rate is $S1 = \frac{\text{score1}}{\text{score1}+\text{score2}}$ and $S2 = \frac{\text{score2}}{\text{score1}+\text{score2}}$.  
 After this match, the elo-rating for player1 will be updated: 
 $R_{1, new} = R1 + K * (\text{score1}+\text{score2}) * (S1-E1)$,  
