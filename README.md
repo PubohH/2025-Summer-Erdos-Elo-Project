@@ -3,7 +3,7 @@
 ## Group Membters: Pubo Huang, Tianxiang (Jimmy) Liu, Rubaiyat Bin Islam  
 
 ## Project Overview 
-We created a Elo rating system for professional snooker players which assigns a number to
+We applied a variation of Elo rating system for professional snooker players which assigns a number to
 each player that reflects their skill levels. We then created several machine learning models that predict
 the machine result and scores based on players’ Elo ratings and their statistics.
 
@@ -56,3 +56,15 @@ The prediction errors are relatively high. We examined the following distributio
 </div>
 
 Elo predictions tend to be normally distributed around 0.5, yet it is not uncommon for actual frame win rates to be close to 0\% or 100\% on days when one player significantly outperforms the other. This is a common issue in sports prediction: despite players having similar skill levels, one may dominate on a given day, and our current models fail to capture this behavior.
+
+## Predicting Match Result
+
+Using the same data set (i.e., last 300 tournaments) and the most recent 20% as testing set, we also ran different models to see how well they predict match outcome (either player1 wins or player1 loses). Since this is a classification problem, the metric we used is simply accuracy, the ratio of correct predictions among all predictions.
+<div style="display: flex; gap: 25px;">
+<img src="6_Match_Prediciton_Models/assets/comparison with Elo.png" alt="comparison 1" width="40%"/>
+<img src="6_Match_Prediciton_Models/assets/comparison without elo.png" alt="comparison 1" width="40%"/>
+</div>
+The baseline model we used is simply by offcial world rankings. For example, to predict match outcome in 2015, we use official world rankings from 2014, and the higher ranked player is always predicted to win. If both players don't have a ranking, then we simply toss a coin to decide the winner. As you can see the accuracy is just over 50%.
+
+We see that Elo alone is already good, achieving 67.2% accuracy in predicting match outcome, and with Elo rating feature included, all other models had, on average, a 2.0% accuracy boost. However, for particular tournaments, it can happen that match prediction based on Elo is far below 50%, worse than just randomly guessing. Sometimes this is due to many players not having enough data in the system, and sometimes this is just how sports are.
+
