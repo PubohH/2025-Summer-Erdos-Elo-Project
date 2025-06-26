@@ -22,3 +22,5 @@ We also see that the elo predicted matches win rates and frames win rate have th
 <img src="/Users/tliu/Desktop/2025-Summer-Erdos-Elo-Project/4_Player_Data_Exploration/Assets/heatmap.png" alt="heatmap" height = 50% width=50%>  
 <img src="/Users/tliu/Desktop/2025-Summer-Erdos-Elo-Project/4_Player_Data_Exploration/Assets/elo_vs_matches.png" alt="heatmap" height = 50% width=50%>  
 <img src="/Users/tliu/Desktop/2025-Summer-Erdos-Elo-Project/4_Player_Data_Exploration/Assets/elo_vs_frames.png" alt="heatmap" height = 50% width=50%>  
+
+3. Among all the features, the elo predicted win has the highest correlation with win_percentage (the proportion of frames player1 win). This suggests that Elo ratings is a strong feature in the prediction.
