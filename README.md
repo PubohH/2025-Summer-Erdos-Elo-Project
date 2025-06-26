@@ -56,3 +56,7 @@ The prediction errors are relatively high. We examined the following distributio
 </div>
 
 Elo predictions tend to be normally distributed around 0.5, yet it is not uncommon for actual frame win rates to be close to 0\% or 100\% on days when one player significantly outperforms the other. This is a common issue in sports prediction: despite players having similar skill levels, one may dominate on a given day, and our current models fail to capture this behavior.
+
+## Predicting Match Result
+
+Using the same data set (i.e., last 300 tournaments) and the most recent 20% as testing set, we also ran different models to see how well they predict match outcome (either player1 wins or player1 loses). Since this is a classification problem, the metric we used is simply accuracy, the ratio of correct predictions among all predictions.
