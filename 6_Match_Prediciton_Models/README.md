@@ -15,4 +15,4 @@ The models we used are: Elo rating system, Logistic Regression, Random Forest, X
 <img src="../6_Match_Prediciton_Models/assets/comparison without elo.png" alt="comparison 1" width="47%"/>
 </div>
 
-We see that Elo alone is already good, achieving 67.2% accuracy in predicting match outcome, and with Elo rating feature included, all other models had, on average, a 2.0% accuracy boost.
+We see that Elo already achieves 67.2% accuracy in predicting match outcomes, and with Elo rating feature included, all other models had, on average, a 2.0% accuracy boost.
