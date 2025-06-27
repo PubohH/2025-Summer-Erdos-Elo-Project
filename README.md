@@ -15,7 +15,7 @@ Unlike chess, a snooker match usually contains more than 3 frames (from best of 
 Suppose player1 and player2 play a match and the scores are score1 and score2. Then their actual frame win rate is $S1 = \frac{\text{score1}}{\text{score1}+\text{score2}}$ and $S2 = \frac{\text{score2}}{\text{score1}+\text{score2}}$.  
 After this match, the elo-rating for player1 will be updated: 
 $R_{1, new} = R1 + K * (\text{score1}+\text{score2}) * (S1-E1)$,  
-where K is the K-factor which we sets to 8. We picked this K-factor after [experimenting](/2_Elo_Rating_System/elo_v4/elo_v4_test2.ipynb) a broad range of values from 4 to 30. 
+where K is the K-factor which we sets to 8. We picked this K-factor after [experimenting](/2_Elo_Rating_System/elo_v4/elo_v4_test.ipynb) a broad range of values from 4 to 30. 
 
 ## Dataset (Acquisition, Cleaning and Generation):
 We acquired snooker [match data (1982-2020)](https://www.kaggle.com/datasets/rusiano/snooker-data-19822020) from Kaggle submitted by user rusiano. The data comes from [cuetracker.net](cuetracker.net), which is used by many parties including bookmakers and sport commentators. We scaped the data from 2020 to 2025 directly from [cuetracker.net](cuetracker.net).  
